@@ -22,18 +22,19 @@ body{
     cursor: pointer;
     border-radius: 6px;
     text-align: center ;
-    transition: transform 0.3s ease;    
+      
 }
-.container .box:active {
+.container .color-box:active {
     transform: scale(0.95);
 }
-.box:hover .color-box{
+.box .color-box:hover{
     background: #d8ccff;
 }
 .box .color-box{
     height: 185px;
     width: 188px;
     background: #a13866;
+    transition: transform 0.3s ease; 
 }
 .box .color-code{
     font-size: 1.15rem;
@@ -42,4 +43,132 @@ body{
     margin: 12px 0 8px;
     font-family: "Roboto", sans-serif;
 }
+.box .color-code:hover{
+    background: rgb(178, 19, 19);
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.choice{
+  border: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0
+}
 
+fieldset{
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#format{
+    margin: 20px;
+}
+
+
+/* ---------- CONTROLS WRAPPER ia started here ---------- */
+
+.controls{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+/* ---------- RADIO GROUP ---------- */
+
+.choice{
+    display: flex;
+    gap: 18px;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* hide default radio */
+.choice input[type="radio"]{
+    display: none;
+}
+
+/* label style */
+.choice label{
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: #444;
+}
+
+/* hover effect */
+.choice label:hover{
+    background: #f3f6ff;
+}
+
+/* checked radio style */
+.choice input[type="radio"]:checked + label{
+    background: #6366f1;
+    color: white;
+    box-shadow: 0 4px 10px rgba(99,102,241,0.3);
+}
+    
+
+
+/* ---------- SELECT DROPDOWN ---------- */
+
+#format{
+    appearance: none;
+    border: none;
+    outline: none;
+    padding: 10px 35px 10px 15px;
+    border-radius: 10px;
+    background: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    transition: all 0.25s ease;
+}
+
+/* hover */
+#format:hover{
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+
+/* ---------- BUTTON ---------- */
+
+.refresh{
+    border: none;
+    outline: none;
+    padding: 12px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    background: linear-gradient(135deg,#6366f1,#7c3aed);
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 20px rgba(99,102,241,0.25);
+}
+
+/* hover */
+.refresh:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(99,102,241,0.35);
+}
+
+/* click */
+.refresh:active{
+    transform: scale(0.96);
+}
