@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background-color:#E3F2FD ;
+}
+.container{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container .box{
+    background: #fff;
+    margin: 13px;
+    padding: 1em;
+    cursor: pointer;
+    border-radius: 6px;
+    text-align: center ;
+    transition: transform 0.3s ease;    
+}
+.container .box:active {
+    transform: scale(0.95);
+}
+.box:hover .color-box{
+    background: #d8ccff;
+}
+.box .color-box{
+    height: 185px;
+    width: 188px;
+    background: #a13866;
+}
+.box .color-code{
+    font-size: 1.15rem;
+    font-weight: 500;
+    display: block;
+    margin: 12px 0 8px;
+    font-family: "Roboto", sans-serif;
+}
+
