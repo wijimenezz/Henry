@@ -6,52 +6,63 @@
 }
 
 body{
-    background-color:#E3F2FD ;
+    
+     background: #f5b25b;;
 }
+
 .container{
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+   
 }
 
-.container .box{
-    background: #fff;
-    margin: 13px;
-    padding: 1em;
+.box{
+    
+    background: #ffffff;
+    border-radius: 12px;
+    margin: 15px;
+    padding: 16px;
+    text-align: center;
     cursor: pointer;
-    border-radius: 6px;
-    text-align: center ;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       
 }
+.box:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+
 .color-box:active {
     transform: scale(0.95);
 }
 .box .color-box:hover{
     background: #d8ccff;
 }
-.box .color-box{
-    height: 150px;
-    width: 158px;
-    background: #a13866;
+.color-box{
+    height: 140px;
+    width: 155px;
     transition: transform 0.3s ease; 
 }
-.box .color-code{
-    font-size: 1.15rem;
-    font-weight: 500;
-    display: block;
-    margin: 12px 0 8px;
-    font-family: "Roboto", sans-serif;
+.color-code{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
 }
+.color-text{
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 12px;
+    letter-spacing: 0.5px;
+}
+
 .box .color-box:hover{
     transform: scale(1.05);
 }
-.controls{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
+
 .choice{
   border: none;
   display: flex;
@@ -114,7 +125,7 @@ fieldset{
 
 /* checked radio style */
 .choice input[type="radio"]:checked + label{
-    background: #6366f1;
+    background: #4A8F93;
     color: white;
     box-shadow: 0 4px 10px rgba(99,102,241,0.3);
 }
@@ -139,7 +150,8 @@ fieldset{
 
 /* hover */
 #format:hover{
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+    background: #f3f6ff;
 }
 
 
@@ -152,7 +164,7 @@ fieldset{
     font-size: 15px;
     font-weight: 600;
     border-radius: 10px;
-    background: linear-gradient(135deg,#6366f1,#7c3aed);
+    background:#4A8F93;
     color: white;
     cursor: pointer;
     transition: all 0.25s ease;
@@ -169,4 +181,76 @@ fieldset{
 /* click */
 .refresh:active{
     transform: scale(0.96);
+}
+
+/*Hero*/
+
+.hero {
+  height: 100vh;
+  background: #7fc4c8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+.wave {
+  position: absolute;
+  width: 100px;
+  opacity: 0.8;
+}
+
+.wave path {
+  stroke: rgba(255,255,255,0.6);
+  stroke-width: 1.9;
+  fill: none;
+}
+
+/* POSITIONS */
+.wave1 {
+  top: 20%;
+  left: 15%;
+}
+
+.wave2 {
+  top: 40%;
+  left: 70%;
+  transform: scale(0.8);
+}
+
+.wave3 {
+  top: 60%;
+  left: 30%;
+  transform: scale(1.2);
+}
+.hero h1 {
+  font-size: 48px;
+  letter-spacing: 15px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 300;
+}
+
+.hero p {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
+.goTo {
+    border: none;
+    outline: none;
+    padding: 15px 25px;
+    font-size: 15px;
+    border-radius: 10px;
+    background: #f5b25b;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 20px rgba(99,102,241,0.25);
+    margin: 1.5em;
 }
