@@ -45,13 +45,35 @@ body{
 .color-box{
     height: 140px;
     width: 155px;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
+    position: relative;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden; 
 }
 .color-code{
     font-size: 1.1rem;
     font-weight: 600;
     color: #222;
 }
+.hover-code{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    
+    font-size: 1rem;
+    font-weight: 600;
+    
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+.color-box:hover .hover-code{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .color-text{
     font-size: 0.8rem;
     color: #888;

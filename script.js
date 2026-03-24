@@ -30,6 +30,19 @@ const generateColor = () => {
     renderColors(); // display them
 };
 
+function colorContrast(hex){
+
+    hex = hex.replace("#", "");
+
+    let r = parseInt(hex.substring(0, 2), 16);
+    let g = parseInt(hex.substring(2, 4), 16);
+    let b = parseInt(hex.substring(4, 6), 16);
+
+    let brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+    return brightness > 128 ? "#000" : "#fff";
+}
+
 
 // ---------------- RENDER COLORS ----------------
 
@@ -52,12 +65,18 @@ function renderColors() {
 
         const colorBox = document.createElement("article");
         colorBox.classList.add("box");
+            let textColor = colorContrast(hex);
 
         colorBox.innerHTML = `
-            <div class="color-box" style="background: ${hex}"></div>
+            <div class="color-box" style="background: ${hex}">
+                <span class="hover-code" style="color: ${textColor}">
+            ${hex}
+            </div>
             <h3 class= "color-text">${tittle}</h3>
             <p class="color-code">${displayColor}</p>
         `;
+        colorBox.addEventListener("click", () => copyColor (colorBox,hex));
+
 
         container.appendChild(colorBox);
     }
@@ -65,7 +84,14 @@ function renderColors() {
     boxes = document.querySelectorAll(".box");
 }
 
+const copyColor = (elem,txtColor) => {
+    const colorElement = elem.querySelector(".hover-code");
+    navigator.clipboard.writeText(txtColor).then(() => {
+        colorElement.innerHTML= "Copiado";
+        setTimeout(() => colorElement.innerHTML = txtColor,1000);
+    })
 
+}
 // ---------------- SHOW / HIDE BOXES ----------------
 
 function showBox(number) {
@@ -143,6 +169,7 @@ function hexToHSL(hex) {
 
     return `hsl(${h}, ${s}%, ${l}%)`;
 }
+
 
 
 // ---------------- EVENTS ----------------
