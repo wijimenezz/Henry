@@ -11,10 +11,13 @@ body{
 }
 
 .container{
+
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
+
    
 }
 
@@ -43,14 +46,15 @@ body{
     background: #d8ccff;
 }
 .color-box{
-    height: 140px;
-    width: 155px;
+    height: 9em;
+    width: 9.5em;
     transition: transform 0.3s ease;
     position: relative;
-    height: 140px;
     border-radius: 10px;
     overflow: hidden; 
+
 }
+
 .color-code{
     font-size: 1.1rem;
     font-weight: 600;
@@ -103,12 +107,14 @@ fieldset{
 /* ---------- CONTROLS WRAPPER ia started here ---------- */
 
 .controls{
+    position: sticky;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     margin-top: 10px;
+    
 }
 
 
