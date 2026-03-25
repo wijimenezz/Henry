@@ -70,7 +70,7 @@ function renderColors() {
         colorBox.innerHTML = `
             <div class="color-box" style="background: ${hex}">
                 <span class="hover-code" style="color: ${textColor}">
-            ${hex}
+            ${hex}</span>
             </div>
             <h3 class= "color-text">${tittle}</h3>
             <p class="color-code">${displayColor}</p>
@@ -170,6 +170,17 @@ function hexToHSL(hex) {
     return `hsl(${h}, ${s}%, ${l}%)`;
 }
 
+const toast = document.getElementById("toast");
+
+function showToast(message){
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 1500);
+}
+
 
 
 // ---------------- EVENTS ----------------
@@ -178,18 +189,32 @@ function hexToHSL(hex) {
 refreshButton.addEventListener("click", () => {
     generateColor();
     showBox(getSelectedNumber());
+
+    showToast("🌈 Paleta Generada");
 });
 
 // change format (same colors!)
 formatSelect.addEventListener("change", () => {
     renderColors();
     showBox(getSelectedNumber());
+
+    showToast("⚙️ Cambio de Formato");
 });
 
 // radio buttons
-six.addEventListener("change", () => showBox(6));
-eight.addEventListener("change", () => showBox(8));
-nine.addEventListener("change", () => showBox(9));
+six.addEventListener("change", () => {
+    showBox(6);
+    showToast("Mostrando 6 colores 🖍️");
+});
+eight.addEventListener("change", () => {
+     showBox(8);
+     showToast("Mostrando 8 Colores 🖍️");
+});
+nine.addEventListener("change", () => {
+showBox(9);
+showToast("Mostrando 9 Colores 🖍️");
+ });
+ 
 
 
 const hero = document.querySelector(".hero");

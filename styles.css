@@ -276,3 +276,30 @@ fieldset{
     box-shadow: 0 10px 20px rgba(99,102,241,0.25);
     margin: 1.5em;
 }
+#toast{
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+
+    background: #012628;
+    color: #fff;
+
+    padding: 12px 20px;
+    border-radius: 10px;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+#toast.show{
+    opacity: 1;
+    transform: translateX(50%) translateY(-150%);
+}
